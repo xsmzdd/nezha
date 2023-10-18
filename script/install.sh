@@ -4,7 +4,7 @@
 #   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ / Alpine 3+ /
 #     Arch 仅测试了一次，如有问题带截图反馈 dysf888@pm.me
 #   Description: 哪吒监控安装脚本
-#   Github: https://github.com/naiba/nezha
+#   Github: https://github.com/xsmzdd/nezha
 #========================================================
 
 NZ_BASE_PATH="/opt/nezha"
@@ -66,13 +66,13 @@ pre_check() {
     fi
     
     if [[ -z "${CN}" ]]; then
-        GITHUB_RAW_URL="raw.githubusercontent.com/naiba/nezha/master"
+        GITHUB_RAW_URL="raw.githubusercontent.com/xsmzdd/nezha/master"
         GITHUB_URL="github.com"
         Get_Docker_URL="get.docker.com"
         Get_Docker_Argu=" "
         Docker_IMG="ghcr.io\/naiba\/nezha-dashboard"
     else
-        GITHUB_RAW_URL="cdn.jsdelivr.net/gh/naiba/nezha@master"
+        GITHUB_RAW_URL="cdn.jsdelivr.net/gh/xsmzdd/nezha@master"
         GITHUB_URL="dn-dao-github-mirror.daocloud.io"
         Get_Docker_URL="get.daocloud.io/docker"
         Get_Docker_Argu=" -s docker --mirror Aliyun"
@@ -488,7 +488,7 @@ uninstall_dashboard() {
     fi
     
     rm -rf $NZ_DASHBOARD_PATH
-    docker rmi -f ghcr.io/naiba/nezha-dashboard > /dev/null 2>&1
+    docker rmi -f ghcr.io/xsmzdd/nezha-dashboard > /dev/null 2>&1
     docker rmi -f registry.cn-shanghai.aliyuncs.com/naibahq/nezha-dashboard > /dev/null 2>&1
     clean_all
     
@@ -568,7 +568,7 @@ show_usage() {
 show_menu() {
     echo -e "
     ${green}哪吒监控管理脚本${plain} ${red}${NZ_VERSION}${plain}
-    --- https://github.com/naiba/nezha ---
+    --- https://github.com/xsmzdd/nezha ---
     ${green}1.${plain}  安装面板端
     ${green}2.${plain}  修改面板配置
     ${green}3.${plain}  启动面板
